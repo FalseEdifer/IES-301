@@ -4,41 +4,31 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script>
-		
-			function relogio(){
-				var data=new Date();
-				var hor=data.getHours();
-				var min=data.getMinutes();
-				var seg=data.getSeconds();
-				
-				if(hor < 10){
-					hor="0"+hor;
-				}
-				if(min < 10){
-					min="0"+min;
-				}
-				if(seg < 10){
-					seg="0"+seg;
-				}
-				
-				var horas=hor + ":" + min + ":" + seg;
-				
-				document.getElementById("rel").value=horas;
-			}
-
-			var timer=setInterval(relogio,1000);
-
-		</script>
+    <script type="text/javascript">
+      function showtime () {
+              var now = new Date();
+              var hours = now.getHours();
+              var minutes = now.getMinutes();
+              var seconds = now.getSeconds()
+              var timeValue = "" + ((hours >12) ? hours -12 :hours)
+              timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+              timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+              timeValue += (hours >= 12) ? " P.M." : " A.M."
+              document.clock.face.value = timeValue;
+              setTimeout("showtime()",1000);
+      }
+      </script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Olá, mundo!</title>
   </head>
-  <body>
+  <body onLoad="showtime()">
     <h1>EX 2 16\08\2022</h1>
-    <input type="text" id="rel">
-        
+    <form name="clock">
+      <input type="text" name="face" size=14 value="">
+    </form>
+      
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
