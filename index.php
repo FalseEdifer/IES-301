@@ -13,9 +13,9 @@
   <body>
     <h1>Exercicios</h1>
 
-    <a class="btn btn-outline-dark" href="Data.html" role="button">Data</a>
+    <a class="btn btn-outline-dark" href="Data.php" role="button">Data</a>
     <p></p>
-    <a class="btn btn-outline-dark" href="Relogio.html" role="button">Relógio</a>
+    <a class="btn btn-outline-dark" href="Relogio.php" role="button">Relógio</a>
      
 
     <!-- JavaScript (Opcional) -->
