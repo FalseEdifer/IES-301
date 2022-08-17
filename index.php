@@ -16,7 +16,8 @@
     <a class="btn btn-outline-dark" href="Data.php" role="button">Data</a>
     <p></p>
     <a class="btn btn-outline-dark" href="Relogio.php" role="button">Relógio</a>
-     
+    <p></p>
+     <a class="btn btn-outline-dark" href="Jogo.php" role="button">Relógio</a>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
