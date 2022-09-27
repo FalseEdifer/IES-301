@@ -1,56 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <!-- Meta tags Obrigatórias -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script>
-
-    </script>
-    <title>Olá, mundo!</title>
-  </head>
-  <body>
-    <a class="btn btn-outline-dark" href="index.html" role="button">Index</a>
-
-    <div class="container">
-        <div>
-            <label class="sr-only">Insira um número</label>
-            <input type="text" class="form-control" id="numero" placeholder="Número">
-            <button type="submit" class="btn btn-primary mb-2" onclick="adicionar()">Adicionar</button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="geral.css">
+    <title>Array</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label class="sr-only">Insira um nome</label>
+            <input type="text" class="form-control outline-dark" id="nome" placeholder="Nome">
+            <button type="submit" class="btn btn-outline-dark" onclick="adicionar()">Adicionar</button>
+            <button type="submit" class="btn btn-outline-dark" onclick="alfabetico()">Visualizar em ordem alfabética</button>
         </div>
         <div id="result"></div>
-     </div> 
-<script>
-         var numeros = [];
+    </div>
+    
+    <script>
+        var nomes = [];
+        var result = document.querySelector('#result');
 
-       function adicionar() {
-            var inputElement = document.querySelector("#numero").value;
-            numeros.push(inputElement);
-            document.querySelector('#result').innerHTML = list(numeros).outerHTML;
-            }
+        function adicionar(){
+            var inputElement = document.querySelector("#nome").value;
+            nomes.push(inputElement);
+            document.querySelector('#result').innerHTML = list(nomes).outerHTML;
 
-            function list(array) {
-            var listElement = document.createElement("ul");
+            function list(array) {
+            var listElement = document.createElement("ul");
 
-            for (var i = 0; i < array.length; i++) {
-                var itemElement = document.createElement('li');
-                itemElement.appendChild(document.createTextNode(array[i]));
-                listElement.appendChild(itemElement);
-            }
-            return listElement;
-        }
+            for (var i = 0; i < array.length; i++) {
+                var itemElement = document.createElement('li');
+                itemElement.appendChild(document.createTextNode(array[i]));
+                listElement.appendChild(itemElement);
+            }
+            return listElement;
+            }
+        }
 
-        document.querySelector('#result').appendChild(list(numeros));
-    </script>
+        function alfabetico(){
+            result.innerHTML = nomes.sort() + '<br>';
+        }
 
-
-    <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+        document.querySelector('#result').appendChild(list(nomes));
+    </script>
+     <br>
+     <a class="btn btn-outline-dark" href="index.html" role="button">Index</a>
+     <br>
+</body>
 </html>
