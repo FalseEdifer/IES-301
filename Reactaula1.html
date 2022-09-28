@@ -16,38 +16,71 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 </head>
-<body>
+        <body>
+            <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactaula1</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="container">
+    <a class="btn btn-outline-dark" href="index.html" role="button">Index</a>
+    <h1 class="titulo-principal">Lorem ipsum aliquam habitasse himenaeos laoreet suscipit
+        libero risus nisl, ligula interdum lorem erat cras lobortis etiam euismod nisi, varius diam inceptos mauris
+       tincidunt interdum potenti donec. rutrum donec nullam ligula vivamus neque molestie posuere semper vitae molestie
+       accumsan platea suscipit, iaculis risus fermentum pretium aptent sit blandit etiam quis ultrices bibendum.
+       sed turpis ultricies tellus elementum nullam ipsum mi, at mollis laoreet nec vehicula euismod, et sociosqu
+       dolor arcu fermentum tellus. iaculis pellentesque at inceptos feugiat consectetur vitae curabitur suspendisse
+       duis, nullam taciti fames magna velit est malesuada ipsum nisl, amet tempor aenean sed blandit donec feugiat
+       dictum. 
+       Ad nunc nam neque cubilia proin quam arcu habitasse nunc curabitur, iaculis gravida litora euismod enim consectetur
+       etiam imperdiet laoreet curabitur, congue in himenaeos ipsum potenti felis vulputate ipsum ornare. consequat convallis
+       vitae donec tempus orci rhoncus per facilisis, nam ligula accumsan nisl rutrum in torquent aliquam vel, porttitor
+       dolor nisl curabitur donec mauris nisi. primis porttitor quisque ut pretium aliquam nulla fames facilisis blandit
+       erat tristique torquent elit, nullam placerat morbi urna condimentum rhoncus rutrum eu a conubia litora quisque,
+       congue ullamcorper ipsum auctor imperdiet laoreet curabitur vestibulum cras eleifend ornare pellentesque. 
+       Volutpat donec bibendum laoreet conubia mauris netus habitant quis vulputate, sodales eleifend magna ut convallis
+       pulvinar lobortis. dictumst massa condimentum metus euismod lobortis rutrum dolor tristique, interdum justo
+       fusce ante bibendum potenti platea vehicula, interdum gravida dolor metus bibendum amet iaculis. cubilia
+       varius netus ipsum venenatis elit mi tortor pellentesque auctor pharetra vehicula ultricies, luctus himenaeos
+       sagittis accumsan primis dictumst praesent ultrices commodo sociosqu porttitor nunc, lacinia eu suspendisse
+       mollis tempor curabitur scelerisque sed pharetra nam etiam. condimentum facilisis pharetra lobortis lectus
+       mollis interdum sociosqu amet, in integer platea vivamus nostra neque nisl, eros feugiat elit lorem metus
+       eget aenean. 
+       Auctor neque tempus felis sagittis condimentum cras magna nibh nunc, laoreet suspendisse etiam volutpat tellus
+       vitae donec imperdiet mollis ultrices, taciti neque odio ut gravida vestibulum ligula enim. nostra ligula mi
+       blandit sagittis neque ipsum dapibus urna, aptent quis aliquam sagittis facilisis ad quisque laoreet vulputate,
+       magna eu eleifend rhoncus risus curabitur tellus. justo in sem taciti mauris non leo suscipit ad mi, non praesent
+       enim ullamcorper maecenas leo nam ac quam, commodo pharetra nam aenean elementum sollicitudin viverra conubia. 
+       justo mauris diam ante consectetur potenti nam molestie himenaeos non curaabitur sit interdum, quisque leo nulla
+       quam elit etiam curae varius donec duis lacinia hac, sed potenti ad fringilla netus rhoncus aliquam imperdiet
+       purus ultricies prasesent.
+       Class morbi venenatis nam viverra sociosqu purus eros nam nunc ut nam quisque senectus, amet facilisis feugiat
+       tristique ligula congue ad feugiat habitant tempus senectus. duis sodales convallis pharetra venenatis scelerisque 
+       proin molestie libero, pellentesque curae elit tristique nullam curabitur mollis augue, eu non habitasse non auctor
+       rhoncus est. varius curabitur platea convallis vivamus tortor ad eleifend eros, lacus diam euismod torquent convallis
+       curabitur odio, libero dolor sem suscipit morbi tempor habitasse. commodo et nec tempor tincidunt netus tincidunt
+       litora, nostra quisque donec ante placerat donec, rutrum accumsan ut mollis platea ullamcorper</h1>
 
-        <input class="outline-dark" type="text" id="fraseText" placeholder="digite a frase.">
-        <input  class="outline-dark" type="number" id="numberSpeed" placeholder="digite a velocidade..">
-        <a class="btn btn-outline-dark" id="button" role="button">Enviar Frase</a>
-        <br>
-        <a class="btn btn-outline-dark" href="index.html" role="button">Index</a>
-        <br>
-    
+       <script>
+        function typeWrite(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = ' ';
+            textoArray.forEach(function(letra, i){   
+      
+            setTimeout(function(){
+                elemento.innerHTML += letra;
+            }, 75 * i)
 
-    <div id="root"></div>
-    <p class="p-3" id="frase"></p>
-    <p class="p-3" id="fraseFinal"></p>
-    <script type="text/babel">
-        var i = 0;
-        function fraseTyping() {
-            var txt = document.querySelector('#fraseText').value;
-            var speed = document.querySelector('#numberSpeed').value;
-
-            if (i < txt.length) {
-                document.getElementById("frase").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(fraseTyping, speed);
-            }
+            });
         }
+        const titulo = document.querySelector('.titulo-principal');
+        typeWrite(titulo);
+</script>
+                    
+                
         
-        document.getElementById('button').addEventListener('click', () =>{
-            
-            fraseTyping();
-
-        });
-
     </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <br>
